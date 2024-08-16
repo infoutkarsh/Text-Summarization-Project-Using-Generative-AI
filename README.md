@@ -1,94 +1,83 @@
-# Text Summarization Project using Generative AI
+# Text Summarization Project Using Generative AI
 
 ## Overview
 
-This project demonstrates how to perform text summarization using generative AI models. It leverages the `facebook/bart-large-cnn` model from the Hugging Face `transformers` library to generate concise summaries from lengthy texts.
+This project focuses on implementing text summarization using advanced generative AI techniques. By leveraging the `facebook/bart-large-cnn` model from the Hugging Face `transformers` library, this project transforms lengthy texts into concise, meaningful summaries, making it easier to extract key information from large volumes of data.
 
-## Features
+## Key Features
 
-- **Generative AI**: Uses BART, a powerful model for abstractive summarization.
-- **Flexible Configuration**: Adjust summary length and sampling options.
+- **Generative AI Capabilities**: I utilized BART, a state-of-the-art model for performing **abstractive summarization**, which generates summaries that capture the essence of the input text rather than merely extracting sentences.
+- **Customizable Summarization**: I implemented flexibility in configuring the length and style of the summary, allowing users to tailor the output to their specific needs.
+- **Scalable and Efficient**: The project was designed to handle various text lengths, from short paragraphs to long documents, with adjustable parameters to optimize performance.
 
 ## Requirements
 
-To run this project, you'll need:
+The following Python libraries were required:
 
-- Python 3.6 or higher
-- Libraries: `torch`, `transformers`, `numpy`, `scipy`, `tensorflow`
+- **torch** for handling model computations.
+- **transformers** for leveraging pre-trained generative models.
+- **numpy** for numerical operations.
+- **scipy** for scientific computing.
+- **tensorflow** for additional deep learning capabilities.
 
 ## Setup Instructions
 
-1. **Clone the Repository**
+### 1. Install Dependencies
 
-   Clone the repository to your local machine:
+To set up the environment, I used `pip` to install the necessary libraries. I recommend using a virtual environment to keep the dependencies isolated from other projects:
 
-   ```bash
-   git clone <repository-url>
-   cd text_summarization_project
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-2. **Install Dependencies**
+I created a `requirements.txt` file containing the following:
 
-   Install the required libraries using `pip`. It's recommended to use a virtual environment for isolation:
+```
+transformers
+torch
+numpy
+scipy
+tensorflow
+```
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 2. Input Data
 
-   Create a `requirements.txt` file with the following content:
+I placed the text for summarization in a dedicated file located at `data/input.txt`. This approach simplifies input management and ensures that the script processes the correct content.
 
-   ```
-   transformers
-   torch
-   numpy
-   scipy
-   tensorflow
-   ```
+### 3. Execute the Summarization Script
 
-## How to Use
+I created a script (`main.py`) to automate the summarization process. Running the script generates a summary of the text in `data/input.txt`:
 
-1. **Prepare Your Input**
+```bash
+python main.py
+```
 
-   Place the text you want to summarize in the `data/input.txt` file. 
+The output summary is displayed in the console, providing immediate feedback on the text processing.
 
-2. **Run the Summarization Script**
+### 4. Adjust Summarization Parameters
 
-   Execute the summarization script:
+During development, I incorporated adjustable parameters within the script to control the summarization output:
 
-   ```bash
-   python main.py
-   ```
+- **`max_length`**: Defines the maximum number of tokens in the summary.
+- **`min_length`**: Sets the minimum number of tokens to ensure completeness.
+- **`do_sample`**: Enables or disables sampling, allowing for more varied summaries when enabled.
 
-   The script will read the text from `data/input.txt`, generate a summary, and display it in the console.
-
-3. **Customize Parameters**
-
-   Modify the summarization parameters in the script if needed. You can adjust:
-
-   - `max_length`: Maximum length of the summary
-   - `min_length`: Minimum length of the summary
-   - `do_sample`: Whether to use sampling for the summary
+These parameters were crucial in fine-tuning the summaries to meet specific requirements.
 
 ## Project Structure
+
+The project is structured to maintain clarity and ease of use:
 
 ```
 text_summarization_project/
 │
-├── main.py                  # Main script for summarization
-├── requirements.txt         # List of required libraries
-├── README.md                # Project description and setup instructions
+├── main.py                  # Core script automating the summarization process
+├── requirements.txt         # List of required libraries for the project
+├── README.md                # Detailed project description and setup instructions
 └── data/
     └── input.txt            # Input text file for summarization
 ```
 
-## Contributing
-
-Contributions are welcome! If you have improvements or suggestions, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
-For any questions, reach out to 23mb0068@iitism.ac.in
+For any queries, feedback, or collaboration opportunities, you can reach me at [23mb0068@iitism.ac.in](mailto:23mb0068@iitism.ac.in).
